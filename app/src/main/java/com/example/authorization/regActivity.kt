@@ -16,14 +16,21 @@ class regActivity : AppCompatActivity() {
             val passReg = etPasswordReg.text.toString()
             val passRegRepeat = etPasswordReg2.text.toString()
             if (dataMap.containsKey(loginReg)) {
-                Toast.makeText(
-                    this, "Такой пользователь уже существует",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-                etPhoneReg.text?.clear()
-                etPasswordReg.text.clear()
-                etPasswordReg2.text.clear()
+                if (loginReg.length < 16) {
+                    Toast.makeText(
+                        this, "Неверный логин",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        this, "Такой пользователь уже существует",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                    etPhoneReg.text?.clear()
+                    etPasswordReg.text.clear()
+                    etPasswordReg2.text.clear()
+                }
             } else {
                 if (passReg.length >= 8 && passReg == passRegRepeat) {
                     dataMap[loginReg] = passReg
