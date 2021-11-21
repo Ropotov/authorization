@@ -1,5 +1,6 @@
 package com.example.authorization
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,12 +29,19 @@ class MainActivity : AppCompatActivity() {
                 }
             } else {
                 Toast.makeText(
-                    this, "Неверный логин или пароль", Toast.LENGTH_SHORT
+                    this, "Пользователя не существует", Toast.LENGTH_SHORT
                 )
                     .show()
             }
         }
+        btRegistration.setOnClickListener {
+            var intent= Intent(this, regActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
+
 }
 
 

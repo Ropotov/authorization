@@ -1,6 +1,6 @@
 package com.example.authorization
 
-val dataMap = mapOf(
+val dataMap = mutableMapOf(
         "+7(999)999-99-99" to "159357",
         "+7(999)999-99-90" to "159357",
         "+7(999)999-99-91" to "159357",

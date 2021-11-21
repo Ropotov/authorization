@@ -4,21 +4,18 @@
     xmlns:mask="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:layout_height="match_parent">
 
     <br.com.sapereaude.maskedEditText.MaskedEditText
-        android:id="@+id/etPhone"
+        android:id="@+id/etPhoneReg"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="220dp"
         android:hint="9001234567"
         android:inputType="phone"
+        android:minHeight="48dp"
         android:typeface="monospace"
         app:keep_hint="true"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,44 +24,46 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPasswordReg"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Введите пароль"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btSingin"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneReg"
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btSingin"
+    <EditText
+        android:id="@+id/etPasswordReg2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Sing In"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:ems="10"
+        android:hint="Повторите пароль"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordReg"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btRegistration"
+        android:id="@+id/btSingUp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Sing UP"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSingin" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordReg2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
