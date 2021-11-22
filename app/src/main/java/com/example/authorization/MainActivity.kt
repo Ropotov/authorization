@@ -13,36 +13,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btSingin.setOnClickListener {
-            val login = etPhone.text.toString()
+            val login = etEmail.text.toString()
             val pass = etPassword.text.toString()
-
-            if (dataMap.containsKey(login)) {
-
-                if (dataMap.getValue(login) == pass) {
-                    Toast.makeText(this, "Good Job", Toast.LENGTH_SHORT)
-                        .show()
-                } else {
-                    Toast.makeText(
-                        this, "Неверный логин или пароль", Toast.LENGTH_SHORT
-                    )
-                        .show()
-                }
+            if (!isLoginValid(login) || !isPassValid(pass)) {
+                showToast(this, "Неверный логин или пароль")
             } else {
-                Toast.makeText(
-                    this, "Пользователя не существует", Toast.LENGTH_SHORT
-                )
-                    .show()
+                if (dataMap.containsKey(login) && dataMap.getValue(login) == pass) {
+                    showToast(this, "GOOD JOB")
+                } else {
+                    showToast(this, "Неверный логин или пароль")
+                }
             }
         }
         btRegistration.setOnClickListener {
-            var intent= Intent(this, regActivity::class.java)
+            val intent = Intent(this, RegActivity::class.java)
             startActivity(intent)
         }
     }
 
 
-
 }
+
+
+
 
 
 

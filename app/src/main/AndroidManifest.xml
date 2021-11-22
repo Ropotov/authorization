@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Authorization">
         <activity
-            android:name=".regActivity"
+            android:name=".RegActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
