@@ -11,34 +11,42 @@ class RegActivity : AppCompatActivity() {
         setContentView(R.layout.activity_reg)
 
         btSingUp.setOnClickListener {
+
+            dismissKeyboard(this)
+
             val loginReg = etEmailReg.text.toString()
             val passReg = etPasswordReg.text.toString()
             val passRegRepeat = etPasswordReg2.text.toString()
 
 
             if (loginIsEmpty(loginReg)) {
-                showToast(this, "Email не заполнен")
+                showToast(this, "Email не может быть пустым")
             } else {
                 if (!isLoginValid(loginReg)) {
                     showToast(this, "Неверный Email")
                 } else {
-                    if (!isPassValid(passReg)) {
-                        showToast(this, "Пароль не соответствует требованиям")
+                    if (dataMap.containsKey(loginReg)) {
+                        showToast(this, "Email уже зарегистрирован")
                         passClear()
                     } else {
-                        if (passReg != passRegRepeat) {
-                            showToast(this, "Пароли не совпадают")
-                            passClear()
+                        if (passIsEmpty(passReg) || passIsEmpty(passRegRepeat)) {
+                            showToast(this, "Пароль не может быть пустым")
                         } else {
-                            if (dataMap.containsKey(loginReg)) {
-                                showToast(this, "Email уже зарегистрирован")
+                            if (!isPassValid(passReg)) {
+                                showToast(this, "Пароль не соответствует требованиям")
                                 passClear()
                             } else {
-                                dataMap[loginReg] = passReg
-                                showToast(this, "Пользователь успешно арегистрирован")
-                                val intent = Intent(this, MainActivity::class.java)
-                                startActivity(intent)
+                                if (passReg != passRegRepeat) {
+                                    showToast(this, "Пароли не совпадают")
+                                    passClear()
+                                } else {
 
+                                    dataMap[loginReg] = passReg
+                                    showToast(this, "Пользователь успешно зарегистрирован")
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    startActivity(intent)
+
+                                }
                             }
                         }
                     }

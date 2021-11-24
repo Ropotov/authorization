@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -25,80 +25,75 @@
     <!--            android:inputType="textPassword"-->
     <!--            android:minHeight="48dp" />-->
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Email:"
+            android:textColor="#673AB7"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
             android:hint="Введите Email"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        app:passwordToggleContentDescription="description"
-        app:passwordToggleEnabled="true"
-        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/tvPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Пароль:"
+            android:textColor="#673AB7"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:background="#FFFFFF"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
             android:hint="Введите пароль"
+            android:imeOptions="actionDone"
             android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:minHeight="48dp" />
 
-    <Button
-        android:id="@+id/btSingin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="60dp"
-        android:text="Sing In"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#673AB7"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btRegistration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:text="Sing UP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSingin"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/btSingin"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Войти" />
+
+        <Button
+            android:id="@+id/btRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Зарегистрироваться" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
