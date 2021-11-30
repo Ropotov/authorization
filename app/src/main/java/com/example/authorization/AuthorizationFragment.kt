@@ -27,27 +27,21 @@ class AuthorizationFragment : Fragment() {
 
     private fun authorization(context: Context) {
         dismissKeyboard(requireActivity())
-
         val login = etEmail.text.toString()
         val pass = etPassword.text.toString()
-
-
-        if (!isLoginValid(login)) {
-            showToast(context, "Неверный логин")
-        } else {
-            if (!dataMap.containsKey(login)) {
-                showToast(context, "Такой Email не зарегистрирован")
-            } else {
-                if (!isPassValid(pass)) {
-                    showToast(context, "Неверный пароль")
-                } else {
-                    if (dataMap.getValue(login) == pass) {
-                        showToast(context, "GOOD JOD, MY FRIEND")
-                    } else {
-                        showToast(context, "Неверный пароль")
-                    }
-                }
-            }
+        when {
+            loginIsEmpty(login) -> showToast(context, getString(R.string.email_not_empty))
+            !isLoginValid(login) -> showToast(context, getString(R.string.incorrect_email))
+            !dataMap.containsKey(login) -> showToast(
+                context,
+                getString(R.string.email_do_not_register)
+            )
+            !isPassValid(pass) -> showToast(context, getString(R.string.incorrect_pass))
+            dataMap.getValue(login) != pass -> showToast(
+                context,
+                getString(R.string.incorrect_pass)
+            )
+            else -> showToast(context, getString(R.string.good_job))
         }
     }
 

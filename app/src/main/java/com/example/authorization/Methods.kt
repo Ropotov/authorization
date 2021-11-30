@@ -27,7 +27,8 @@ fun passIsEmpty(pass: String) = pass.isEmpty()
 
 fun dismissKeyboard(activity: Activity){
     val imm = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    if(null != activity.currentFocus) imm.hideSoftInputFromWindow(
-        activity.currentFocus!!.applicationWindowToken, 0)
+    activity.currentFocus?.let {
+        imm.hideSoftInputFromWindow(it.applicationWindowToken, 0)
+    }
 }
 

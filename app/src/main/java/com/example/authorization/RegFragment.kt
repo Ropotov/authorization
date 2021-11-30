@@ -16,7 +16,6 @@ class RegFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_reg, container, false)
-
     }
 
     override fun onStart() {
@@ -39,35 +38,30 @@ class RegFragment : Fragment() {
         val passReg = etPasswordReg.text.toString()
         val passRegRepeat = etPasswordReg2.text.toString()
         when {
-            loginIsEmpty(loginReg) -> {
-                showToast(context, "Email не может быть пустым")
-            }
-            !isLoginValid(loginReg) -> {
-                showToast(requireContext(), "Неверный Email")
-            }
+            loginIsEmpty(loginReg) -> showToast(context, getString(R.string.email_not_empty))
+            !isLoginValid(loginReg) -> showToast(requireContext(),
+                getString(R.string.incorrect_email))
             dataMap.containsKey(loginReg) -> {
-                showToast(context, "Email уже зарегистрирован")
+                showToast(context, getString(R.string.already_registered_email))
+                passClear()
+            }
+            passIsEmpty(passReg) || passIsEmpty(passRegRepeat) -> showToast(
+                context,
+                getString(R.string.pass_not_empty)
+            )
+            passReg != passRegRepeat -> {
+                showToast(context, getString(R.string.pass_do_not_match))
+                passClear()
+            }
+            !isPassValid(passReg) -> {
+                showToast(context, getString(R.string.pass_incorrect_reg))
                 passClear()
             }
             else -> {
-                when {
-                    passIsEmpty(passReg) || passIsEmpty(passRegRepeat) -> {
-                        showToast(context, "Пароль не может быть пустым")
-                    }
-                    passReg != passRegRepeat -> {
-                        showToast(context, "Пароли не совпадают")
-                        passClear()
-                    }
-                    !isPassValid(passReg) -> {
-                        showToast(context, "Пароль не соответствует требованиям")
-                        passClear()
-                    }
-                    else -> {
-                        dataMap[loginReg] = passReg
-                        showToast(context, "Пользователь успешно зарегистрирован")
-                    }
-                }
+                dataMap[loginReg] = passReg
+                showToast(context, getString(R.string.successfully_reg))
             }
         }
     }
 }
+

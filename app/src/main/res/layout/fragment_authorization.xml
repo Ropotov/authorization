@@ -12,7 +12,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="250dp"
         android:layout_marginEnd="40dp"
-        android:text="Войти" />
+        android:text="@string/sing_in" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -22,7 +22,7 @@
         android:layout_marginTop="185dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/rounded_edittext"
-        android:hint="Введите пароль"
+        android:hint="@string/pass_enter"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:minHeight="48dp" />
@@ -34,7 +34,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="170dp"
         android:layout_marginEnd="40dp"
-        android:text="Пароль:"
+        android:text="@string/pass"
         android:textColor="#673AB7"
         android:textSize="12sp"
         android:textStyle="bold" />
@@ -47,7 +47,7 @@
         android:layout_marginTop="115dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/rounded_edittext"
-        android:hint="Введите Email"
+        android:hint="@string/email_enter"
         android:inputType="textEmailAddress"
         android:minHeight="48dp" />
 
@@ -58,7 +58,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="40dp"
-        android:text="Email:"
+        android:text="@string/email"
         android:textColor="#673AB7"
         android:textSize="12sp"
         android:textStyle="bold" />

@@ -14,30 +14,26 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="contentDescription"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tb1"
-            android:layout_width="wrap_content"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Вход" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Регистрация" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/singin" />
 
-    </com.google.android.material.tabs.TabLayout>
-
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registration" />
+        </com.google.android.material.tabs.TabLayout>
 
         <FrameLayout
             android:id="@+id/container"
@@ -51,6 +47,5 @@
             app:layout_constraintVertical_bias="0.0">
 
         </FrameLayout>
-</LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
