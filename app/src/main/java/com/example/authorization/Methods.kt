@@ -9,6 +9,7 @@ import java.util.regex.Pattern
 fun showToast(context: Context, text: String) {
     Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
 }
+
 fun isLoginValid(login: String): Boolean {
     val inputStr: CharSequence = login
     val pattern = Pattern.compile(
@@ -25,7 +26,7 @@ fun loginIsEmpty(login: String) = login.isEmpty()
 
 fun passIsEmpty(pass: String) = pass.isEmpty()
 
-fun dismissKeyboard(activity: Activity){
+fun dismissKeyboard(activity: Activity) {
     val imm = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     activity.currentFocus?.let {
         imm.hideSoftInputFromWindow(it.applicationWindowToken, 0)

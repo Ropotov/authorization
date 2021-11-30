@@ -21,12 +21,15 @@ class MainActivity : AppCompatActivity() {
                     1 -> fragmentReplace(RegFragment())
                 }
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab?) {
             }
+
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
         })
     }
+
     private fun fragmentReplace(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
