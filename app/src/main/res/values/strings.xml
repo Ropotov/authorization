@@ -11,13 +11,13 @@
     <string name="incorrect_pass">Неверный пароль</string>
     <string name="good_job">GOOD JOB, MY FRIEND</string>
     <string name="registration">Регистрация</string>
-    <string name="singin">Вход</string>
-    <string name="sing_in">Войти</string>
+    <string name="singin">Авторизация</string>
+    <string name="sing_in">ВОЙТИ</string>
     <string name="pass_enter">Введите пароль</string>
     <string name="pass">Пароль:</string>
     <string name="email_enter">Введите Email</string>
     <string name="email">Email:</string>
     <string name="repeat_pass">Повторите пароль</string>
-    <string name="reg">Зарегистрироваться</string>
-    <string name="pass_prompt">*Пароль должен содержать \n от 8 до 16 символов</string>
+    <string name="reg">Регистрация</string>
+    <string name="pass_prompt">ПАРОЛЬ ДОЛЖЕН СОДЕРЖАТЬ \nОТ 8 ДО 16 СИМВОЛОВ</string>
 </resources>
